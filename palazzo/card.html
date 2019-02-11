@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Палаццо - студия мебели и дизайна</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./dist/bundle.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="content">
+      <header class="header">
+        <div class="header__address">
+          <h1>Мебель для домов<br>и квартир под ключ</h1>
+          <img src="./images/geo.png" alt="">
+          <span>г. Кострома,<span></span> ул. Северной правды, 35</span>
+        </div>
+        <div class="header__logo">
+          <a href="#"><img src="./images/logo.png" alt=""></a>
+        </div>
+        <div class="header__social">
+          <div class="header__phone">
+            <img src="./images/phone.png" alt="">
+            <a href="#">+7 (4942) 501-621</a>
+          </div>
+          <span>напишите нам</span>
+          <span class="header__icons">
+            <a href="#"><img src="./images/social/vk.png" alt="VK"></a>
+            <a href="#"><img src="./images/social/fb.png" alt="Facebook"></a>
+            <a href="#"><img src="./images/social/viber.png" alt="Viber"></a>
+            <a href="#"><img src="./images/social/wa.png" alt="What's App"></a>
+          </span>
+        </div>
+      </header>
+      <div class="menu">
+        <nav>
+          <ul class="menu__main">  
+            <li><a href="#">ПОКУПАТЕЛЮ</a></li>
+            <li><a href="#">КАТАЛОГ</a></li>
+            <li>
+              <a href="#">НАШИ РАБОТЫ</a>
+              <ul class="menu__add">
+                <li><a href="#">Кухни</a></li>
+                <li><a href="#">Шкафы</a></li>
+                <li><a href="#">Гардеробные</a></li>
+              </ul>
+            </li>
+            <li><a href="#">ОТЗЫВЫ</a></li>
+            <li><a href="#">КОНТАКТЫ</a></li>
+            <li><a href="#">ПАРТНЕРАМ</a></li>
+          </ul>
+        </nav>
+        <div class="menu__icon" id="menu"></div>
+      </div>
+
+       <section class="breadcrumps">
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">Каталог</a></li>
+          <li><a href="#">Наши&nbsp;работы</a></li>
+          <li><a href="#">Шкафы-купе</a></li>
+          <li>Шкаф&nbsp;с&nbsp;дверями&nbsp;из&nbsp;массива</li>
+        </ul>
+      </section>
+      <div class="separator"></div>
+      <section class="card container">
+        <h2>Шкаф с дверями из массива</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-3 ctl-menu">
+            <h2>Каталог</h2>
+            <ul class="ctl__menu">
+              <li><a href="#">Кухни из массива Росси</a></li>
+              <li><a href="#">Кухни крашенный МДФ</a></li>
+              <li><a href="#">Кухни шпонированный МДФ</a></li>
+              <li><a href="#">Кухни Италии</a></li>
+              <li><a href="#">Гардеробные системы</a></li>
+              <li>
+                <a href="#">Витражи и зеркала</a>
+                <ul class="ctl__menu-lvl">
+                  <li><a href="#">Зеркала 1</a></li>
+                  <li class="active"><a href="#">Зеркала 2</a></li>
+                  <li><a href="#">Зеркала 3</a></li>
+                </ul>
+              </li>
+              <li class="active">
+                <a href="#">Наши работы</a>
+                <ul class="ctl__menu-lvl">
+                  <li><a href="#">Кухни</a></li>
+                  <li class="active"><a href="#">Шкафы-купе</a></li>
+                  <li><a href="#">Гардеробные</a></li>
+                  <li><a href="#">Спальни</a></li>
+                  <li><a href="#">Детские</a></li>
+                  <li><a href="#">Мебель для ванной комнаты</a></li>
+                  <li><a href="#">Мебель на заказ</a></li>
+                  <li><a href="#">Мягкая мебель</a></li>
+                  <li><a href="#">Торговое оборудование</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-9 product">
+            <div class="product__photo" id="photo">
+              <a href="#" id="product-prev"><img src="./images/arrow-left.png" alt=""></a>
+              <img src="./images/catalog/2944_b.jpg" alt="" class="sizeble">
+              <a href="#" id="product-next"><img src="./images/arrow-right.png" alt=""></a>
+            </div>
+            <ul class="product__all" id="photo-list">
+              <li><img class="active" src="./images/catalog/2944_b.jpg" 
+                alt="" data-num="1"></li>
+              <li><img src="./images/catalog/2945_b.jpg" alt="product" data-num="2"></li>
+              <li><img src="./images/catalog/2946_b.jpg" alt="product" data-num="3"></li>
+              <li><img src="./images/catalog/2946_b.jpg" alt="product" data-num="4"></li>
+            </ul>
+            <div class="separator small" style="margin-top: 0; margin-bottom: 20px"></div>
+            <div class="want">
+              <div class="want__price">
+                <span>23 800</span> руб пог.м.
+              </div>
+              <input type="button" value="Хочу такую кухню">
+            </div>
+            <div class="props">
+              <nav class="property" id="property">
+                <div class="property__tab active" data-num="1">
+                  <span>Описание</span>
+                </div>
+                <div class="property__tab" data-num="2">
+                  <span>Фасадная линейка</span>
+                </div>
+                <div class="property__tab" data-num="3">
+                  <span>Трендовые цвета</span>
+                </div>
+                <div class="property__tab" data-num="4">
+                  <span>Варианты компектации</span>
+                </div>
+                <div class="property__tab" data-num="5">
+                  <span>Оплата и доставка</span>
+                </div>
+              </nav>
+              <div class="props__content prop" id="prop">
+                <div class="prop__desc">
+                  <p> 
+                    Шкафы купе давно уже завоевали популярность 
+                    в рамках необходимости эргономично оформить 
+                    пространство. Они вместительны, 
+                    выглядят стильно, отлично вписываются в 
+                    любой интерьер.
+                  </p>
+                  <p>
+                    Высококачественная 
+                    фурнитура Blum и МакМарт 
+                    гарантирует долгие годы 
+                    удобной эксплуатации.
+                  </p>
+                </div>
+                <div class="prop__ruler" data-all="5">
+                  <a href="#" id="rule-prev"><img src="./images/arrow-left.png" alt="prev"></a>
+                  <div class="prop__row">
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door" class="sizeble">
+                      <p>Фасад с филенкой 1</p>
+                    </div>
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door" class="sizeble">
+                      <p>Фасад с филенкой 2</p>
+                    </div>
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door" class="sizeble">
+                      <p>Фасад с филенкой если длинное название 3</p>
+                    </div>
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door" class="sizeble">
+                      <p>Фасад с филенкой 4</p>
+                    </div>
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door" class="sizeble">
+                      <p>Фасад с филенкой 5</p>
+                    </div>
+                  </div>
+                  <a href="#" id="rule-next"><img src="./images/arrow-right.png" alt="prev"></a>
+                </div>
+                <div class="prop__color" data-all="6">
+                  <a href="#" id="color-prev"><img src="./images/arrow-left.png" alt="prev"></a>
+                  <div class="prop__row">
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door">
+                      <p>Венге</p>
+                    </div>
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door">
+                      <p>Перламутр</p>
+                    </div>
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door">
+                      <p>Бирюза</p>
+                    </div>
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door">
+                      <p>Каштановый</p>
+                    </div>
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door">
+                      <p>Ванильный</p>
+                    </div>
+                    <div class="prop__rule">
+                      <img src="./images/ruler/door.png" alt="door">
+                      <p>Кофейный</p>
+                    </div>
+                  </div>
+                  <a href="#" id="color-next"><img src="./images/arrow-right.png" alt="prev"></a>
+                </div>
+                <div class="prop__option option container">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <div class="option__param">
+                        <div class="option__type">
+                          <img src="./images/complect/1.png" alt="Стиль">
+                          <span>Стиль</span>  
+                        </div>
+                        <span class="prm__dot" style="height: 12px"></span>
+                        <span class="option__value">Лофт</span> 
+                      </div>
+                      <div class="option__param">
+                        <div class="option__type">
+                          <img src="./images/complect/2.png" alt="Покрытие">
+                          <span>Покрытие</span>  
+                        </div>
+                        <span class="prm__dot" style="height: 12px"></span>
+                        <span class="option__value">Эмаль</span> 
+                      </div>    
+                      <div class="option__param">
+                        <div class="option__type">
+                          <img src="./images/complect/3.png" alt="Столешница">
+                          <span>Столешница</span>  
+                        </div>
+                        <span class="prm__dot" style="height: 12px"></span>
+                        <span class="option__value">Постформинг</span> 
+                      </div>  
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <div class="option__param">
+                        <div class="option__type">
+                          <img src="./images/complect/4.png" alt="Материал">
+                          <span>Материал фасада</span>  
+                        </div>
+                        <span class="prm__dot" style="height: 12px"></span>
+                        <span class="option__value">Шпон</span> 
+                      </div>
+                      <div class="option__param">
+                        <div class="option__type">
+                          <img src="./images/complect/5.png" alt="ЛДСТП">
+                          <span>ЛДСТП</span>  
+                        </div>
+                        <span class="prm__dot" style="height: 12px"></span>
+                        <span class="option__value">Эггер</span> 
+                      </div>    
+                      <div class="option__param">
+                        <div class="option__type">
+                          <img src="./images/complect/6.png" alt="Техника">
+                          <span>Техника</span>  
+                        </div>
+                        <span class="prm__dot" style="height: 12px"></span>
+                        <span class="option__value">Техника</span> 
+                      </div>  
+                    </div>
+                  </div>
+                </div>
+                <div class="prop__desc">
+                  <p> 
+                    Шкафы купе давно уже завоевали популярность 
+                    в рамках необходимости эргономично оформить 
+                    пространство. Они вместительны, 
+                    выглядят стильно, отлично вписываются в 
+                    любой интерьер.
+                  </p>
+                  <p>
+                    Высококачественная 
+                    фурнитура Blum и МакМарт 
+                    гарантирует долгие годы 
+                    удобной эксплуатации.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="separator small" style="margin: 10px 0;"></div>
+            <div class="how">
+              <div class="how__block">
+                <span>Как происходит заказ кухни</span>
+              </div>
+              <div class="how__block"><span>Сколько стоит дизайн-проект</span></div>
+            </div>
+            <div class="request">
+              <h3>Заполните и получите бесплатный дизайн-проект!</h3>
+              <form action="#" class="feedback__form">
+                <input type="text" placeholder="Ваше имя">
+                <input type="text" placeholder="Ваш телефон" id="mask">
+                <input type="text" placeholder="Ваш город"><br>
+                <div class="request__wrap">
+                  <input type="checkbox" checked><a href="#">Даю согласие на обработку персональных данных</a>
+                  <input type="submit" value="Получить дизайн проект">
+                </div>
+              </form>
+            </div>
+            <div class="both container">
+              <h3>Вам также может понравиться</h3>
+              <div class="catalog__list list row justify-content-between  align-items-baseline">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                  <div class="list__item item">
+                    <a href="#" class="item__link">
+                      <img src="./images/catalog/455_s.jpg" alt="Афина">
+                      <span class="item__text">КУХНИ ИЗ МАССИВА РОССИИ</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                  <div class="list__item item">
+                    <a href="#" class="item__link">
+                      <img src="./images/catalog/157_s.jpg" alt="Афина">
+                      <span class="item__text">КУХНИ ИЗ МАССИВА ИТАЛИИ</span>
+                    </a>
+                  </div>
+                </div>  
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                  <div class="list__item item">
+                    <a href="#" class="item__link">
+                      <img src="./images/catalog/471_s.jpg" alt="Афина">
+                      <span class="item__text">КУХНИ КРАШЕННЫЕ МДФ</span>
+                    </a>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="separator without"></div>
+      
+      <div class="footer container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12 footer__section">
+            <h4>КАТАЛОГ ПРОДУКЦИИ</h4>
+            <ul>
+              <li><a href="#">Кухни из массива России</a></li>
+              <li><a href="#">Кухни крашенный МДФ</a></li>
+              <li><a href="#">Кухни шпинированный МДФ</a></li>
+              <li><a href="#">Кухни Италии</a></li>
+              <li><a href="#">Гардеробные системы</a></li>
+              <li><a href="#">Витражы и зеркала</a></li>
+              <li><a href="#">Наши работы</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-7 col-sm-12 footer__section">
+            <h4>ГЛАВНАЯ</h4>
+            <ul>
+              <li><a href="#">Покупателю</a></li>
+              <li><a href="#">Каталог</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li><a href="#">Партнёры</a></li>
+              <li><a href="#">Акции и предложения</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 footer__section contacts">
+            <div class="contacts__phone">
+              <img src="./images/phone.png" alt="">
+              <a href="#">+7 (4942) 501-621</a>
+            </div>
+            <span class="contacts__time">Пн - Пт с 9.00 до 18.00</span><br>
+            <span class="contacts__time">Сб с 10.00 до 16.00</span><br>
+            <div class="contacts__icons">
+              <span>Напишите нам: </span>
+              <a href="#"><img src="./images/social/vk.png" alt="VK"></a>
+              <a href="#"><img src="./images/social/fb.png" alt="Facebook"></a>
+              <a href="#"><img src="./images/social/viber.png" alt="Viber"></a>
+              <a href="#"><img src="./images/social/wa.png" alt="What's App"></a>
+            </div>
+            <span class="contacts__mail">salon@palazo.ru</span>
+            <span class="contacts__address">Кострома, ул. Северной<br>правды, д. 35</span>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-12 footer__section payment">
+            <div class="payment__share">
+              <span>Поделиться: </span>
+              <a href="#" class="payment__icon">
+                <img src="./images/social/vk-sq.png" alt="VK">
+              </a> 
+              <a href="#" class="payment__icon">
+                <img src="./images/social/fb-sq.png" alt="Facebook">
+              </a>
+              <a href="#" class="payment__icon">
+                <img src="./images/social/ok-sq.png" alt="Одноклассники">
+              </a>       
+            </div>
+            <button class="payment__btn-black">Онлайн-расчёт</button>
+            <button class="payment__btn-red">Сделать заказ</button>
+          </div> 
+        </div>
+      </div>
+      <div class="copy">
+        <span>&copy; 2018, студия «Палаццо» Все права защищены.</span>
+      </div>
+    </div>
+  </div>
+  <script src="./dist/bundle.js"></script>
+</body>
+</html>

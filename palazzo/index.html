@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Палаццо - студия мебели и дизайна</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./dist/bundle.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="content">
+      <header class="header">
+        <div class="header__address">
+          <h1>Мебель для домов<br>и квартир под ключ</h1>
+          <img src="./images/geo.png" alt="">
+          <span>г. Кострома,<span></span> ул. Северной правды, 35</span>
+        </div>
+        <div class="header__logo">
+          <a href="#"><img src="./images/logo.png" alt=""></a>
+        </div>
+        <div class="header__social">
+          <div class="header__phone">
+            <img src="./images/phone.png" alt="">
+            <a href="#">+7 (4942) 501-621</a>
+          </div>
+          <span>напишите нам</span>
+          <span class="header__icons">
+            <a href="#"><img src="./images/social/vk.png" alt="VK"></a>
+            <a href="#"><img src="./images/social/fb.png" alt="Facebook"></a>
+            <a href="#"><img src="./images/social/viber.png" alt="Viber"></a>
+            <a href="#"><img src="./images/social/wa.png" alt="What's App"></a>
+          </span>
+        </div>
+      </header>
+      <div class="menu">
+        <nav>
+          <ul class="menu__main">  
+            <li><a href="#">ПОКУПАТЕЛЮ</a></li>
+            <li><a href="#">КАТАЛОГ</a></li>
+            <li>
+              <a href="#">НАШИ РАБОТЫ</a>
+              <ul class="menu__add">
+                <li><a href="#">Кухни</a></li>
+                <li><a href="#">Шкафы</a></li>
+                <li><a href="#">Гардеробные</a></li>
+              </ul>
+            </li>
+            <li><a href="#">ОТЗЫВЫ</a></li>
+            <li><a href="#">КОНТАКТЫ</a></li>
+            <li><a href="#">ПАРТНЕРАМ</a></li>
+          </ul>
+        </nav>
+        <div class="menu__icon" id="menu"></div>
+      </div>
+      <section class="intro">
+        <div class="intro-about">
+          <div class="intro-about__block">
+            <span>ВСТРОЕННЫЕ КУХНИ</span><br>
+            <p>ИЗ ЭКОЛОГИЧНОГО МАТЕРИАЛА ПО ЦЕНАМ ПРОИЗВОДИТЕЛЯ</p>
+            <ul>
+              <li>Функционально спланируем пространство</li>
+              <li>Удобно разместим бытовую технику</li>
+              <li>Идеально подгоним мебель к стенам и потолку</li>
+            </ul>
+          </div>
+        </div>
+        <div class="intro__slider" id="slider">
+          <ul class="intro__slide">
+            <li class="active"><img src="./images/slides/slide1.jpg" alt="kitchen"></li>
+            <li><img src="./images/slides/slide2.jpg" alt="kitchen"></li>
+          </ul>
+          <a href="#" id="prev">
+            <img src="./images/arrow-left.png" alt="">
+          </a>
+          <a href="#" id="next">
+            <img src="./images/arrow-right.png" alt="">
+          </a>
+        </div>
+        <div class="intro__feedback feedback">
+          <div class="feedback__section">
+            <h3>Оставить заявку</h3>
+            <p>на дизайн проект</p>
+            <form action="#" class="feedback__form">
+              <input type="text" placeholder="Ваше имя">
+              <input type="text" placeholder="Ваш телефон" id="mask">
+              <input type="submit" value="Получить дизайн проект"><br>
+              <input type="checkbox" checked>
+              <a href="#">Даю согласие на обработку персональных данных</a>
+            </form>
+          </div>
+        </div>
+      </section>
+      <div class="separator"></div>
+      <div class="promo">
+        <a href="#" id="promo-prev"><img src="./images/arrow-left.png" alt=""></a>
+        <div class="promo__list">
+          <div class="promo__item">
+            <img src="./images/promo/1.png" alt="">
+            <a href="#">Собственное производство мебели и фасадов из массива</a>
+          </div>  
+          <div class="promo__item">
+            <img src="./images/promo/2.png" alt="">
+            <a href="#">Вся наша продукция сертифицирована</a>
+          </div> 
+          <div class="promo__item">
+            <img src="./images/promo/3.png" alt="">
+            <a href="#">Экологически чистые материалы для мебели (дерево, МДФ, шпон)</a>
+          </div> 
+          <div class="promo__item">
+            <img src="./images/promo/4.png" alt="">
+            <a href="#">Студия «Палаццо» 10 лет на рынке</a>
+          </div> 
+        </div>
+        <a href="#" id="promo-next"><img src="./images/arrow-right.png" alt=""></a>
+      </div>
+      <div class="separator"></div>
+      <section class="catalog container-fluid">
+        <h2>Каталог</h2>
+        <div class="catalog__list list row justify-content-center align-items-baseline">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/455_s.jpg" alt="Афина">
+                <span class="item__text">КУХНИ ИЗ МАССИВА РОССИИ</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/157_s.jpg" alt="Афина">
+                <span class="item__text">КУХНИ ИЗ МАССИВА ИТАЛИИ</span>
+              </a>
+            </div>
+          </div>  
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/471_s.jpg" alt="Афина">
+                <span class="item__text">КУХНИ КРАШЕННЫЕ МДФ</span>
+              </a>
+            </div>
+          </div>  
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/481_s.jpg" alt="Афина">
+                <span class="item__text">КУХНИ ШПОНИРОВАННЫЙ МДФ</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="separator"></div>
+      <section class="catalog container-fluid">
+        <h2>Наши работы</h2>
+        <div class="catalog__list list row justify-content-center align-items-baseline">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/22_s.jpg" alt="Афина">
+                <span class="item__text">КУХНИ</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/76_s.jpg" alt="Афина">
+                <span class="item__text">ШКАФЫ-КУПЕ</span>
+              </a>
+            </div>
+          </div>  
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/465_s.jpg" alt="Афина">
+                <span class="item__text">ГАРДЕРОБНЫЕ</span>
+              </a>
+            </div>
+          </div>  
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/100_s.jpg" alt="Афина">
+                <span class="item__text">СПАЛЬНИ</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/109_s.jpg" alt="Афина">
+                <span class="item__text">ДЕТСКИЕ</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/111_s.jpg" alt="Афина">
+                <span class="item__text">МЕБЕЛЬ ДЛЯ ВАННОЙ КОМНАТЫ</span>
+              </a>
+            </div>
+          </div>  
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/412_s.jpg" alt="Афина">
+                <span class="item__text">МЕБЕЛЬ НА ЗАКАЗ</span>
+              </a>
+            </div>
+          </div>  
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/547_s.jpg" alt="Афина">
+                <span class="item__text">МЯГКАЯ МЕБЕЛЬ</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="list__item item">
+              <a href="#" class="item__link">
+                <img src="./images/catalog/112_s.jpg" alt="Афина">
+                <span class="item__text">ТОРГОВОЕ ОБОРУДОВАНИЕ</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="separator"></div>
+      <div class="promo promo-full container-fluid">
+        <h3>Почему наша мебель не как у всех?</h3>
+        <div class="promo-full__row active">
+          <div class="promo__list">
+            <div class="promo__item">
+              <img src="./images/promo/5.png" alt="">
+              <a href="#">Бесплатный дизайн проект в нескольких вариантах</a>
+            </div>  
+            <div class="promo__item">
+              <img src="./images/promo/6.png" alt="">
+              <a href="#">Редкие и инновационные решения дизайна</a>
+            </div> 
+            <div class="promo__item">
+              <img src="./images/promo/7.png" alt="">
+              <a href="#">Изготовление нестандартных элементов</a>
+            </div> 
+            <div class="promo__item">
+              <img src="./images/promo/8.png" alt="">
+              <a href="#">Оптимальное соотношение цены и качества</a>
+            </div> 
+          </div>
+        </div>
+        <div class="promo-full__row">
+          <div class="promo__list">
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/9.png" alt="">
+              <a href="#">Большое количество декоративных элементов и возможность их использования</a>
+            </div>  
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/10.png" alt="">
+              <a href="#">Рассрочка платежа и кредит</a>
+            </div> 
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/11.png" alt="">
+              <a href="#">Профессиональная подготовка и обучение специалистов</a>
+            </div> 
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/12.png" alt="">
+              <a href="#">Использование высококачественных материалов и фурнитуры</a>
+            </div> 
+          </div>
+        </div>
+        <div class="promo-full__row">
+          <div class="promo__list">
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/13.png" alt="">
+              <a href="#">Расчет заявок через интернет</a>
+            </div>  
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/14.png" alt="">
+              <a href="#">Квалифицированные замерщики</a>
+            </div> 
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/15.png" alt="">
+              <a href="#">Профессиональный монтаж и согласованная доставка мебели</a>
+            </div> 
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/16.png" alt="">
+              <a href="#">Гарантийное обслуживание</a>
+            </div>
+          </div>
+        </div>
+        <a href="#" id="promo-full-prev"><img src="./images/arrow-left.png" alt=""></a>
+        <div class="promo-full-mobile">
+          <div class="promo__list">
+            <div class="promo__item">
+              <img src="./images/promo/1.png" alt="">
+              <a href="#">Бесплатный дизайн проект в нескольких вариантах</a>
+            </div>  
+            <div class="promo__item">
+              <img src="./images/promo/2.png" alt="">
+              <a href="#">Редкие и инновационные решения дизайна</a>
+            </div> 
+            <div class="promo__item">
+              <img src="./images/promo/3.png" alt="">
+              <a href="#">Изготовление нестандартных элементов</a>
+            </div> 
+            <div class="promo__item">
+              <img src="./images/promo/4.png" alt="">
+              <a href="#">Оптимальное соотношение цены и качества</a>
+            </div> 
+            <div class="promo__item">
+              <img src="./images/promo/5.png" alt="">
+              <a href="#">Большое количество декоративных элементов и возможность их использования</a>
+            </div>  
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/6.png" alt="">
+              <a href="#">Рассрочка платежа и кредит</a>
+            </div> 
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/7.png" alt="">
+              <a href="#">Профессиональная подготовка и обучение специалистов</a>
+            </div> 
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/8.png" alt="">
+              <a href="#">Использование высококачественных материалов и фурнитуры</a>
+            </div>
+            <div class="promo__item">
+              <img src="./images/promo/9.png" alt="">
+              <a href="#">Расчет заявок через интернет</a>
+            </div>  
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/10.png" alt="">
+              <a href="#">Квалифицированные замерщики</a>
+            </div> 
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/11.png" alt="">
+              <a href="#">Профессиональный монтаж и согласованная доставка мебели</a>
+            </div> 
+            <div class="col-lg-3 col-md-6 col-12 promo__item">
+              <img src="./images/promo/12.png" alt="">
+              <a href="#">Гарантийное обслуживание</a>
+            </div>
+          </div>
+        </div>
+        <a href="#" id="promo-full-next"><img src="./images/arrow-right.png" alt=""></a>
+        <div class="promo-full__line"></div>
+        <span class="promo-full__link" id="all-promo">Показать еще</span>
+      </div>
+      <div class="community container-fluid">
+        <div class="row justify-content-lg-around justify-content-center">
+          <div class="col-lg-6 col-md-8 col-sm-12 community__block">
+            <h3>Отзывы</h3>
+            <div class="community__wrap">
+              <a href="#" id="fb-prev"><img src="./images/arrow-left.png" alt="prev"></a>
+              <ul class="community__fbs" data-fbs="2">
+                <li data-num="1">
+                  <div class="community__fb fb">
+                    <div class="fb__row-1">
+                      <span>Елена Васильевна</span>
+                      <span>14 сентября 2018</span>
+                    </div>
+                    <div class="fb__row-2">
+                      <span>
+                        Студия «Палаццо» предлагает клиентам 
+                        высококачественную мебель в Костроме на заказ. 
+                        Наше предприятие может похвастаться огромным 
+                        ассортиментом и оптимизированной ценовой политикой. 
+                        За долгое время работы в мебельной отрасли...
+                      </span>
+                    </div>
+                    <div class="fb__row-3">
+                      <input type="button" value="Все отзывы >">
+                      <span><span class="fb-count"></span> / <span class="fb-all"></span></span>
+                    </div>
+                  </div>
+                </li>
+                <li data-num="1">
+                  <div class="community__fb fb">
+                    <div class="fb__row-1">
+                      <span>Василий Иванович</span>
+                      <span>15 ноября 2018</span>
+                    </div>
+                    <div class="fb__row-2">
+                      <span>
+                          Собственные производственные мощности «Палаццо» 
+                          и колоссальный опыт нашей команды делают возможным
+                          создание мебели на заказ в Костроме, которая 
+                          отвечает нуждам и потребностям каждого конкретного 
+                          заказчика
+                      </span>
+                    </div>
+                    <div class="fb__row-3">
+                      <input type="button" value="Все отзывы >">
+                      <span><span class="fb-count"></span> / <span class="fb-all"></span></span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <a href="#" id="fb-next"><img src="./images/arrow-right.png" alt="next"></a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-8 col-sm-12 community__block">
+            <h3>Сертификаты</h3>
+            <div class="community__wrap">
+              <a href="#" id="cert-prev"><img src="./images/arrow-left.png" alt="prev"></a>
+                <ul class="community__certs" data-certs="2">
+                  <li data-num="1">
+                    <div class="community__cert">
+                      <img src="./images/certs/1.png" alt="cert" class="sizeble">
+                      <img src="./images/certs/1.png" alt="cert" class="sizeble">
+                    </div>
+                  </li>
+                  <li data-num="2">
+                    <div class="community__cert">
+                      <img src="./images/certs/2.png" alt="cert" class="sizeble">
+                      <img src="./images/certs/2.png" alt="cert" class="sizeble">
+                    </div>
+                  </li>
+                </ul>
+              <a href="#" id="cert-next"><img src="./images/arrow-right.png" alt="next"></a>
+            </div>
+          </div> 
+        </div>
+      </div>
+      <div class="about">
+        <h1>Мебель на заказ в Костроме</h1>
+        <p style="text-align: center;">Качественная дизайнерская мебель от костромского производителя.</p>
+        <p>Студия «Палаццо» предлагает клиентам высококачественную мебель в Костроме на заказ. Наше предприятие может похвастаться огромным ассортиментом и оптимизированной ценовой политикой. За долгое время работы в мебельной отрасли, компания «Палаццо» смогла завоевать любовь и доверие клиентов. Положительный имидж предприятия сформирован благодаря тому, что в работе мы придерживаемся принципов индивидуального подхода, большой ответственности, исключительного качества.</p>
+        <p>Собственные производственные мощности «Палаццо» и колоссальный опыт нашей команды делают возможным создание мебели на заказ в Костроме, которая отвечает нуждам и потребностям каждого конкретного заказчика. Даже самые требовательные и экстравагантные клиенты остаются глубоко удовлетворены сотрудничеством с нашей компанией.</p>
+        <h2>Производим мебель, учитывая особенности планировки и интерьера заказчика</h2>
+        <p>Студия «Палаццо» создает высококлассную мебель на заказ в Костроме, используя широчайшие возможности нашего производства. Мы большое внимание уделяем тому, чтобы отслеживать не только модные тенденции мебельного мира, но и все инновации в производственной сфере. Для создания мебели на заказ мы используем высокотехнологичное оборудование и актуальные технологии, высококачественные и экологичные материалы, надежную фурнитуру.</p>
+        <p>Каждый член нашей команды является высококвалифицированным профессионалом, который не просто имеет огромный опыт, но и со страстью относится к своей работе. Такая увлеченность созданием мебели на заказ гарантирует тщательный подход к созданию и исполнению проектов сложнейшего уровня.</p>
+        <h3>Выгода от сотрудничества</h3>
+        <p></p>
+        <p>Так как нашей специализацией является не только производство мебели, но и дизайн интерьера в целом, мы с радостью выполним масштабные и смелые проекты под ключ, обеспечив гармоничное сочетание убранства помещения и мебельных гарнитуров. Мы работаем по персональным дизайн-проектам.</p>
+        <p>Вне зависимости от того хотите ли вы купить оригинальную мебель в Костроме или реализовать личные фантазии – профессионалы «Палаццо» помогут вам.</p>
+        <h3>Наш ассортимент мебели</h3>
+        <p>Мы предлагаем широчайший модельный ряд разнообразных изделий. Среди нашего ассортимента вы можете найти:</p>
+        <ul>
+          <li>кухни с различными вариантами фасадов;</li>
+          <li>шкафы купе с разнообразными вариантами вставок;</li>
+          <li>детские;</li>
+          <li>спальни;</li>
+          <li>изделия из массива;</li>
+          <li>гардеробные;</li>
+          <li>межкомнатные двери;</li>
+          <li>витражи и зеркала;</li>
+        </ul>
+        <p>Нужно отдельно отметить, что наша компания изготавливает мебель на заказ используя как фасады массива привезенные из Италии, так и фасады массива собственного производства. Для производства изделий из массива используются различные ценные породы древесины: дуб, ясень, бук, вишню, ольху и др. Наша мебель комплектуется качественной и функциональной фурнитурой от ведущих мировых производителей.</p>
+        <p>Более подробную информацию вы сможете уточнить на соответствующих страницах сайта, посмотреть фото в галерее, получить консультацию у представителей компании или приехав в наш салон лично.</p>
+        <h3>Мебель от студии «Палаццо» - квинтэссенция стиля и качества</h3>
+        <p></p>
+        <p>Наша студия создана для людей привычных к высокому уровню жизни; для тех, кто ценит комфорт и качество. Главной целью компании является обеспечение потребителей первосортной мебелью в Костроме, а нашим девизом - стремление к совершенству.</p>
+        <p>Если вам требуется не просто купить мебель в Костроме, но создать нетривиальную и оригинальную деревянную мебель – команда студии «Палаццо» с радостью воплотит в жизнь даже самые смелые мечты. Обратившись в нашу компанию, вы гарантированно получите именно такую мебель, о которой мечтали.</p>
+        <p>Приглашаем вас в выставочный салон студии «Палаццо», в котором можно поближе познакомиться с образцами используемых нами при производстве мебели, фасадами и пленками для них, пластиком и камнем для столешниц, кромочными материалами и другими экспозиторами.</p>
+      </div>
+      <div id="partners">
+        <div id="prt-left"></div>
+        <div id="prt-content">
+          <div id="prt-wrap">
+            <a href="#"><img src="./images/partners/1.png" alt="parter"></a>
+            <a href="#"><img src="./images/partners/2.png" alt="parter"></a>
+            <a href="#"><img src="./images/partners/3.png" alt="parter"></a>
+            <a href="#"><img src="./images/partners/4.png" alt="parter"></a>
+            <a href="#"><img src="./images/partners/5.png" alt="parter"></a>
+            <a href="#"><img src="./images/partners/6.png" alt="parter"></a>
+            <a href="#"><img src="./images/partners/7.png" alt="parter"></a>
+            <a href="#"><img src="./images/partners/8.png" alt="parter"></a>
+          </div>
+        </div>
+        <div id="prt-right"></div>
+      </div>
+      <div class="news">
+        <h3>Новости</h3>
+        <a href="#" class="news__all">Все новости</a>
+        <div class="container">
+          <div class="news__list row">
+            <div class="col-md-4 col-sm-12 new">
+              <span class="new__date">6 марта 2018</span>
+              <h4 class="new__title"><a href="#">KORTING "Продуктовая акция"</a></h4>
+              <p class="new__text">Условия акции: При покупке в период акции следующего набора техники, покупатель получает: 1) При покупке комплекта техники на сумму 120 000 рублей в...</p>
+            </div>
+            <div class="col-md-4 col-sm-12 new">
+              <span class="new__date">6 марта 2018</span>
+              <h4 class="new__title"><a href="#">KORTING "Продуктовая акция"</a></h4>
+              <p class="new__text">Условия акции: При покупке в период акции следующего набора техники, покупатель получает: 1) При покупке комплекта техники на сумму 120 000 рублей в...</p>
+            </div>
+            <div class="col-md-4 col-sm-12 new">
+              <span class="new__date">6 марта 2018</span>
+              <h4 class="new__title"><a href="#">KORTING "Продуктовая акция"</a></h4>
+              <p class="new__text">Условия акции: При покупке в период акции следующего набора техники, покупатель получает: 1) При покупке комплекта техники на сумму 120 000 рублей в...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12 footer__section">
+            <h4>КАТАЛОГ ПРОДУКЦИИ</h4>
+            <ul>
+              <li><a href="#">Кухни из массива России</a></li>
+              <li><a href="#">Кухни крашенный МДФ</a></li>
+              <li><a href="#">Кухни шпинированный МДФ</a></li>
+              <li><a href="#">Кухни Италии</a></li>
+              <li><a href="#">Гардеробные системы</a></li>
+              <li><a href="#">Витражы и зеркала</a></li>
+              <li><a href="#">Наши работы</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-7 col-sm-12 footer__section">
+            <h4>ГЛАВНАЯ</h4>
+            <ul>
+              <li><a href="#">Покупателю</a></li>
+              <li><a href="#">Каталог</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li><a href="#">Партнёры</a></li>
+              <li><a href="#">Акции и предложения</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 footer__section contacts">
+            <div class="contacts__phone">
+              <img src="./images/phone.png" alt="">
+              <a href="#">+7 (4942) 501-621</a>
+            </div>
+            <span class="contacts__time">Пн - Пт с 9.00 до 18.00</span><br>
+            <span class="contacts__time">Сб с 10.00 до 16.00</span><br>
+            <div class="contacts__icons">
+              <span>Напишите нам: </span>
+              <a href="#"><img src="./images/social/vk.png" alt="VK"></a>
+              <a href="#"><img src="./images/social/fb.png" alt="Facebook"></a>
+              <a href="#"><img src="./images/social/viber.png" alt="Viber"></a>
+              <a href="#"><img src="./images/social/wa.png" alt="What's App"></a>
+            </div>
+            <span class="contacts__mail">salon@palazo.ru</span>
+            <span class="contacts__address">Кострома, ул. Северной<br>правды, д. 35</span>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-12 footer__section payment">
+            <div class="payment__share">
+              <span>Поделиться: </span>
+              <a href="#" class="payment__icon">
+                <img src="./images/social/vk-sq.png" alt="VK">
+              </a> 
+              <a href="#" class="payment__icon">
+                <img src="./images/social/fb-sq.png" alt="Facebook">
+              </a>
+              <a href="#" class="payment__icon">
+                <img src="./images/social/ok-sq.png" alt="Одноклассники">
+              </a>       
+            </div>
+            <button class="payment__btn-black">Онлайн-расчёт</button>
+            <button class="payment__btn-red">Сделать заказ</button>
+          </div> 
+        </div>
+      </div>
+      <div class="copy">
+        <span>&copy; 2018, студия «Палаццо» Все права защищены.</span>
+      </div>
+    </div>
+  </div>
+  <script src="./dist/bundle.js"></script>
+</body>
+</html>
