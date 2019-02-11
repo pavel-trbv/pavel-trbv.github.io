@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="//d3js.org/topojson.v1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+        <style>
+            @font-face {
+                font-family: SofiaProSemiBold;
+                src: url('fonts/sofiaprosemibold.eot');
+                src: url('fonts/sofiaprosemibold.eot?#iefix') format('embedded-opentype'),
+                     url('fonts/sofiaprosemibold.woff2') format('woff2'),
+                     url('fonts/sofiaprosemibold.woff') format('woff'),
+                     url('fonts/ofiaprosemibold.ttf') format('truetype'),
+                     url('fonts/sofiaprosemibold.svg#sofia_prosemi_bold') format('svg');
+                font-weight: 900;
+                font-style: normal;
+            }
+            .ui-widget.ui-widget-content {border-radius: 0;color: #56667b; border: none; margin: 10px;box-shadow: 0 3px 9px rgba(0,0,0,.3);}
+            .ui-widget {font-size: 14px;}
+            .ui-widget li div{padding: 5px;}
+            *{margin:0;border:0;padding:0;font-family: 'Open Sans';font-weight: 300; font-style: normal;}
+            path{fill: #ccc;stroke: rgba(150,150,150,1);stroke-width:0.2px;}
+            path:hover{opacity:0.6}
+            svg{margin-bottom:0px;margin-left:30px;}
+            body{font-family:'Open Sans',sans-serif;background:#f8f8fa;}
+            div.popup{position: relative;margin-top: 50px;text-align: center;width: 230px;height: 50px;padding: 16px 18px;font-size: 12px;left:-30px; color:#D5D5D5;background: #000;border: 0px;border-radius: 8px;pointer-events: none;font-weight: 300;margin-bottom: -110px;transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;}
+            div.popup:before {content:' ';width:12px;height:12px;transform:rotateZ(45deg);position:absolute;top:-6px;background:#000;left:calc(50% - 6px);}
+            div.tooltip {position: absolute;text-align: center;width:auto;min-width: 60px;height:auto;min-height: 28px;padding: 3px;font: 12px sans-serif;background:white;border:0px;border-radius: 8px;pointer-events: none;top:8vh;}
+            path:hover{opacity: 0.9;}
+            .legend {position:absolute;left:1000px;top:400px;padding-top: 10px;font: 11px sans-serif;}
+            rect {border-radius: 100%}
+            .logo{background-color: #00a7ed; width: 166px; height: 68px; position: fixed; top: 0;left: 0;}
+            .logo:hover{opacity: 0.8;}
+            .form{width:100%; text-align: center; position: fixed; margin-top: 22px;height:46px;top:0;}
+            
+            form input[type=text] {width: 140px; display: inline-block; height: 46px; line-height: 46px; font-family: 'Open Sans';font-weight: 300; border-radius: 25px; outline: none; border: none !important; box-sizing: border-box;background: #fff;text-align: center; color: #56667b;font-size: 14px; margin-right: 10px; padding: 0 15px;margin-left: 83px;}
+            form input[type=submit] {width: 130px; display: inline-block;  height: 46px; font-weight: 900; font-family: SofiaProSemiBold; border-radius: 25px; outline: none;box-sizing: border-box; letter-spacing: -0.04em; background-color: #00a7ed; color:#fff;font-weight: bold;font-size: 16px; transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all; cursor: pointer}
+            form input[type=submit]:hover {opacity: 0.8;}
+            .foot  * {margin: 0 7px;}
+            .foot {position:fixed;bottom: 15px;left: 8px;}
+            .foot span {font-size: 11.5px;color: #8b95a2;}
+            .foot span a {font-size: 11.5px;color: #00a7ed;text-decoration: none; transition: 0.3s cubic-bezier(0.175, 0.885, 0.320, 1) all;}
+            .foot span a:hover {opacity: 0.7;}
+            .land {fill: #828282;}
+            .county-boundary {fill: none;stroke: #fff;stroke-width:0.5px;}
+            .state-boundary {fill: none;stroke: #fff;}
+            rect {border: 2px solid #fff}
+            table {font-size: 1em;}
+            @media all and (orientation: portrait){
+                .logo{left: 50vw;margin-left: -83px;}
+                .form{width: 100vw;padding: 15px;box-sizing: border-box;}
+                form {margin-top:50px;}
+                div.popup{left: 0; transform: translateY(65px);}
+                form input[type=text] {width: 47%; margin-right: 2%; margin-left: 0;box-sizing: border-box;}
+                form input[type=submit] {width: 47%; box-sizing: border-box;}
+                form input[type=submit]:hover {opacity: 0.8;}
+            }
+        </style>
+    </head>
+    <body>
+        <object class="logo" data="logo.svg"></object>
+        <div class="form">
+            <form class="ui-widget">
+                <input type="text" id="tags" placeholder="Enter a city">
+                <input type="submit" value="get rates" id="submit4">
+            </form>
+        </div>
+        <script>
+            var debug = false; 
+            d3.csv("/data/co.csv", function(co) {
+                tagsArr = co.map(function(num){
+                    return num.city;
+                })
+                $("#tags").autocomplete({
+                    source: tagsArr
+                });
+            })
+            var c = function(a){console.log(a)}
+            function sleep(ms) {
+                ms += new Date().getTime();
+                while (new Date() < ms){}
+            } 
+            
+            var width = 1160;
+            var height = 600;
+            var city = document.location.hash.replace("#", "").replace("-", " ").toLowerCase();
+            console.log(city);
+/*            if (city !=  "") {
+                $("#tags")[0].value = city;
+                sleep(1000)
+                $("#submit4").click();
+            }*/
+            var colors = ["#ef724b","#ed9f2f", "#efc955", "#7682c7","#58619a","#b2caf4","#708aac","#83cdfa"];
+            var legendText = ["Zone 1", "Zone 2", "Zone 3", "Zone 4", "Zone 5", "Zone 6", "Zone 7", "Zone 8"];
+            var div = d3.select("body")
+            .append("div")   
+            .attr("class", "tooltip")               
+            .style("opacity", 0);
+            var popup = d3.select("body")
+            .append("center")
+            .append("div")
+            .attr("class", "popup")   
+            .style("opacity", 0);
+            d3.select("input")
+                .on("mouseover", function(d) {  
+                popup.transition()        
+                    .duration(200)      
+                    .style("opacity", .7);      
+                popup.text("Update the ZIP Code to reflect Onibag delivery zones based on your origination 5-digit ZIP Code")
+                //.style("left", (d3.event.pageX) - 130 + "px")   
+                    .style("left", "-60px")  
+                    .style("margin-top", "0px")
+                
+            })               
+                .on("mouseout", function(d) {       
+                popup.transition()        
+                    .duration(500)      
+                    .style("opacity", 0);   
+            })
+            window.onload = function() {
+                d3.selectAll('svg').remove();
+                var projection = d3.geo.albersUsa()
+                .scale(1200)
+                .translate([width / 2, height / 2]);
+                
+                var path = d3.geo.path()
+                .projection(projection);
+                
+                var svg = d3.select("body").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+                d3.json("/data/topo.json", function(error, topology) {
+                    svg.selectAll("path")
+                    .data(topojson.feature(topology, topology.objects.counties).features)
+                    .enter().append("path")
+                    .attr("d", path)
+                    .style("fill", function(d) {
+                        return "#ccc";
+                    })
+                    .on("mouseover", function(d) { 
+                        var text = d.id
+                        div.transition()        
+                            .duration(200)      
+                            .style("opacity", .9);      
+                        div.text(text)
+                            .style("left", (d3.event.pageX) + "px")     
+                            .style("top", (d3.event.pageY - 28) + "px");    
+                    }) 
+                    .on("mouseout", function(d) {       
+                        div.transition()        
+                            .duration(500)      
+                            .style("opacity", 0);   
+                    })
+                }) 
+                if (city != '') {
+                    $("#tags")[0].value = city;
+                    $("#submit4").click(); 
+                }   
+            }   
+            d3.select(self.frameElement).style("height", height + "px");
+            d3.select("form").on("keydown", function(e) {
+                d3.select("input").style("border", "1px #e7e7eb solid");
+            })
+            d3.select("form").on("submit", function(e) {
+                if (d3.selectAll('input')[0][0].value == false) {
+                    d3.select("input").transition().duration(200).style("border", "1px #d23a3a solid");
+                } 
+                else {
+                    document.location.href = "?#"+d3.selectAll('input')[0][0].value.replace(" ", "-") 
+                    var input = d3.selectAll('input')[0][0].value.toLowerCase();
+                    d3.selectAll('svg').remove();
+                    var projection = d3.geo.albersUsa()
+                    .scale(1200)
+                    .translate([width / 2, height / 2]);
+                    
+                    var path = d3.geo.path()
+                    .projection(projection);
+                    
+                    var svg = d3.select("body").append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+                    
+                    d3.csv("/data/cities.csv", function(error, data) {
+                        if (error) throw error;
+                        d3.csv("/data/co.csv", function(co) {
+                            tagsArr = co.map(function(num){
+                                return num.city;
+                            })
+                            $("#tags").autocomplete({
+                                source: tagsArr
+                            });
+                            var datas = {};
+                            var cn = co.map(function(item) {
+                            	//console.log(item)
+                            	var zip = item.zip.split(',')
+                            	//console.log(zip)
+                            	if (item.city.toLowerCase() == input) {
+                                    /*var city = item.city;
+                                    var num = item.num;*/
+                                    return [item.city, item.num];
+                                } else {
+                                	/*zip.map(function(i) {
+                                		if (zip[i] == input) {
+                                			var city = item.city;
+                                    		var num = item.num;
+                                    		return [item.city, item.num];
+                                		}
+                                	})*/
+                                	for (var i = 0; i < zip.length; i++) {
+                                		if (zip[i] == input) {
+                                			var city = item.city;
+                                    		var num = item.num;
+                                    		return [item.city, item.num];
+                                		}
+                                	}
+                                }
+                            }).filter(function(x) {
+    							return x !== undefined && x !== null; 
+							});
+                            var num = cn[0][1];
+                            var city = cn[0][0];
+                            if (num != undefined) {
+                                for (var i = 0; i<co.length; i++) {
+                                    datas[co[i].city] = data[num-1][co[i].city]
+                                }
+                            }
+                            datas["default"] = "8";
+                            console.log(datas);
+                            d3.json("/data/topo.json", function(error, topology) {
+                                if (error) throw error;
+                                // console.log(topojson.feature(topology, topology.objects.counties).features)
+                                svg.selectAll("path")
+                                    .data(topojson.feature(topology, topology.objects.counties).features)
+                                    .enter().append("path")
+                                    .attr("d", path)
+                                    .on("mouseover", function(d) { 
+                                    for (var i = 0; i<co.length; i++) {
+                                        if (co[i].id == d.id) {
+                                            var city = co[i].city;
+                                            break;
+                                        }
+                                    }
+                                    if (city != undefined) {
+                                        var text = city +" ("+d.id+")";
+                                    } else {
+                                        var text = "("+d.id+")";
+                                    }   
+                                    div.transition()        
+                                        .duration(200)      
+                                        .style("opacity", .9);      
+                                    div.text(text)
+                                        .style("left", (d3.event.pageX) + "px")     
+                                        .style("top", (d3.event.pageY - 28) + "px");    
+                                    })               
+                                    .on("mouseout", function(d) {       
+                                    div.transition()        
+                                        .duration(500)      
+                                        .style("opacity", 0);   
+                                    })
+                                    .style("fill", function(d) {
+                                    for (var i = 0; i<co.length; i++) {
+                                        if (co[i].id == d.id) {
+                                            var city = co[i].city;
+                                            break;
+                                        } //else city = "default";
+                                    }
+                                    var num = datas[city]
+                                    if (num == 0) num = 1;
+                                    num--
+                                    return colors[num];
+                                })  
+                            });
+                        })	
+                        sleep(200);
+                        var legend = d3.select("body").append("svg")
+                        .attr("class", "legend")
+                        .attr("width", 140)
+                        .attr("height", 250)
+                        .selectAll("g")
+                        .data(colors)
+                        .enter()
+                        .append("g")
+                        .attr("transform", function(d, i) { return "translate(10," + i * 25 + ")"; });
+                        
+                        legend.append("circle")
+                            .attr("r", 9)
+                            .style("fill", function(d) {
+                            return d;
+                        }).style("border-radius", "100%");;
+                        
+                        legend.append("text")
+                            .data(legendText)
+                            .attr("x", 24)
+                            .attr("y", 0)
+                            .attr("dy", ".35em")
+                            .text(function(d) { return d; });		
+                    });    
+                }
+            });
+        </script>
+        <div class="foot"><span><span>2016 © All Rights Reserved</span><a href="#">Privacy Policy</a><span>|</span><a href="#">Tems of Service</a></span></div>
+    </body>
+</html>
