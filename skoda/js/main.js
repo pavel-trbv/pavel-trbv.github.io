@@ -41,15 +41,15 @@ window.onload = function() {
   };
 
   const mtlLoader = new THREE.MTLLoader(manager);
-  mtlLoader.setPath('/models/');
+  mtlLoader.setPath('/skoda/models/');
   mtlLoader.load('skodal.mtl', function(materials) {
     console.log(materials);
-    materials.baseUrl = '/models/';
+    materials.baseUrl = '/skoda/models/';
     materials.preload();
 
     const objLoader = new THREE.OBJLoader(manager);
     objLoader.setMaterials(materials);
-    objLoader.setPath('/models/')
+    objLoader.setPath('/skoda/models/')
     objLoader.load('skodal.obj', function(object) {
       console.log(object);
 
